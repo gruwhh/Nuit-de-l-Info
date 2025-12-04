@@ -19,9 +19,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #222; /* fond sombre */
-
+  
 }
+
 html {
   overflow-x: hidden;
 }
