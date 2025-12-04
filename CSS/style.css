@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 html {
@@ -136,6 +136,8 @@ opacity: 1;
   border: 5px solid #4b2e2e;
   position: relative;
   cursor: pointer;
+  transform: rotateY(-20deg) rotateX(10deg); /* biais 3D */
+  transform-style: preserve-3d;
   perspective: 1000px; /* effet 3D */
 }
 
