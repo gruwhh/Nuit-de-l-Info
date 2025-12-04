@@ -12,7 +12,14 @@ body {
   background-image: url('../Assets/ruelle_test.png'); 
   background-size: cover;         
   background-repeat: no-repeat;       
-  background-position: center;         
+  background-position: center;     
+  
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222; /* fond sombre */
 
 }
 html {
@@ -120,5 +127,32 @@ transition: opacity 0.3s ease;
 .zone:hover span {
 display: block;             /* affiché au survol */
 opacity: 1;
+}
+
+.porte {
+  width: 200px;
+  height: 300px;
+  background: sienna; /* couleur bois */
+  border: 5px solid #4b2e2e;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px; /* effet 3D */
+}
+
+.porte::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: peru;
+  transform-origin: left center;
+  transition: transform 1s ease; /* animation fluide */
+}
+
+/* Ouverture au survol */
+.porte:hover::before {
+  transform: rotateY(-100deg);
 }
 
