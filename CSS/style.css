@@ -169,5 +169,5 @@ opacity: 1;
 
 /* ouverture au survol */
 .porte:hover::before {
-  transform: rotateY(-180deg); /* ouverture vers l’extérieur */
+  transform: rotateY(-90deg); /* ouverture vers l’extérieur */
 }
