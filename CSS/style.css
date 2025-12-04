@@ -92,10 +92,33 @@ nav a:hover {
   }
 }
 
+ .zone {
+width: 200px;
+height: 100px;
+background-color: lightblue;
+text-align: center;
+line-height: 100px;
+position: relative;
+cursor: pointer;
+}
+
 .zone span {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+display: none;              /* caché par défaut */
+position: absolute;
+bottom: -30px;
+left: 50%;
+transform: translateX(-50%);
+background: black;
+color: white;
+padding: 5px 10px;
+border-radius: 5px;
+white-space: nowrap;
+opacity: 0;
+transition: opacity 0.3s ease;
 }
+
 .zone:hover span {
-  opacity: 1;
+display: block;             /* affiché au survol */
+opacity: 1;
 }
+
