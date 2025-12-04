@@ -8,7 +8,7 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
-
+  font-family:'Bahnschrift', sans-serif;
   background-image: url('../Assets/ruelle_test.png'); 
   background-size: cover;         
   background-repeat: no-repeat;       
@@ -19,7 +19,7 @@ html {
   overflow-x: hidden;
 }
 nav {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
@@ -46,7 +46,7 @@ nav a {
   color: black;
 }
 nav a:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.55);
 }
 .logo {
   margin-right: auto;
