@@ -19,6 +19,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1200px;
 
 }
 
@@ -129,33 +130,54 @@ display: block;             /* affiché au survol */
 opacity: 1;
 }
 
-.porte {
-  width: 200px;
+.porte-industrielle {
+  width: 180px;
   height: 300px;
-  background: sienna;
-  border: 5px solid #4b2e2e;
-  position: absolute;
-  left: 100px; /* centrée dans le mur */
-  top: 50px;
-  cursor: pointer;
+  background: #ccc; /* couleur métal */
+  border: 8px solid #666; /* cadre métallique */
+  position: relative;
+  transform: rotateY(-15deg);
   transform-style: preserve-3d;
+  transition: transform 1s ease;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  cursor: pointer;
 }
 
-.porte::before {
+/* effet ouverture */
+.porte-industrielle:hover {
+  transform: rotateY(-100deg);
+}
+
+/* joint d’étanchéité */
+.porte-industrielle::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: -8px;
+  width: calc(100% + 16px);
   height: 100%;
-  background: peru;
-  transform-origin: left center;
-  transition: transform 1s ease;
-  transform: skewY(5deg) skewX(-5deg); /* effet trapèze : on déforme le panneau */
+  border: 2px solid #000;
+  box-sizing: border-box;
 }
 
-/* Ouverture au survol */
-.porte:hover::before {
-  transform: rotateY(-100deg) skewY(5deg) skewX(-5deg);
+/* panneau bas */
+.panneau {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 140px;
+  height: 40px;
+  background: #999;
+  border: 2px solid #444;
+}
 
+/* poignée */
+.poignee {
+  position: absolute;
+  right: 10px;
+  top: 130px;
+  width: 20px;
+  height: 40px;
+  background: #333;
+  border-radius: 5px;
 }
