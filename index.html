@@ -1,58 +1,46 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<link rel='stylesheet' href='./css.css'>
-<title>TEAM PATATE</title>
-<link rel='shortcut icon' type='image/x-icon' href='icon.png'>
-</head>
+<html lang="fr">
+    <head>
+        <title>Team-Patate</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
 
-<body>
-<h1>TEAM PATATE</h1>
-
-<div class="nav_menu">
-	<nav>
-		<ul>
-			<li><a href="project1.html">Projet 1</a></li>
-			<li><a href="project2.html">Projet 2</a></li>
-			<li><a href="project3.html">Projet 3</a></li>
-			<li><a href="project4.html">Projet 4</a></li>
-			<li><a href="project5.html">Projet 5</a></li>
-			<li><a href="projectNIRD.html">Projet NIRD</a></li>
-		</ul>
-	</nav>
-</div>
-
-<table>
-	<tr>
-		<td><img src="icon.png"></td>
-		<td><img src="icon.png"></td>
-	</tr>
-	<tr>
-		<td><img src="icon.png"></td>
-		<td><img src="icon.png"></td>
-	</tr>
-
-	<tr>
-		<td><img src="icon.png"></td>
-		<td><img src="icon.png"></td>
-	</tr>
-
-	<tr>
-		<td><img src="icon.png"></td>
-		<td><img src="icon.png"></td>
-	</tr>
-	<tr>
-		<td><img src="icon.png"></td>
-		<td><img src="icon.png"></td>
-	</tr>
-	<tr>
-		<td><img src="icon.png"></td>
-		<td><img src="icon.png"></td>
-	</tr>
-</table>
-
+    <body>
+        <nav>
+            <ul class="sidebar">
+                <li onclick=hideSidebar() style="display: flex; justify-content: space-between; align-items: center;">
+                    <span></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#000000" style="display: block; margin: left;">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </li>
+                <li><a href="">À propos</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Juior Entreprise</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <ul>
+                <li class="logo">
+                    <a href="./index.html">
+                        <img src="Assets\icon.png" loading="lazy" width="57" alt="Encatech logo">
+                        <div style="text-align:center; font-size:24px; font-family:'Bahnschrift', sans-serif;">EncaTech</div>
+                    </a>
+                </li>
+                <li class="hideOnMobile"><a href="">À propos</a></li>
+                <li class="hideOnMobile"><a href="">Services</a></li>
+                <li class="hideOnMobile"><a href="">Juior Entreprise</a></li>
+                <li class="hideOnMobile"><a href="">Contact</a></li>
+                <li class="MenuButton" onclick=showSidebar() style="justify-content: center; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+        <script src="Page web\script\Script.js"></script>
+        <!-- contenue -->
 </body>
 
 <footer>
