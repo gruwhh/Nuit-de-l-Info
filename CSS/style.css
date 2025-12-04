@@ -165,9 +165,11 @@ opacity: 1;
   box-shadow: inset 0 0 10px #333;
   transform-origin: left center; /* pivot sur la gauche */
   transition: transform 1s ease;
+  transform: rotateY(85deg); /* collée au mur incliné */
+
 }
 
 /* ouverture au survol */
 .porte:hover::before {
-  transform: rotateY(-90deg); /* ouverture vers l’extérieur */
+  transform: rotateY(0deg); /* ouverture vers l’extérieur */
 }
