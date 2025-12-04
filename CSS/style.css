@@ -132,13 +132,13 @@ opacity: 1;
 .porte {
   width: 200px;
   height: 300px;
-  background: sienna; /* couleur bois */
+  background: sienna;
   border: 5px solid #4b2e2e;
-  position: relative;
+  position: absolute;
+  left: 100px; /* centrée dans le mur */
+  top: 50px;
   cursor: pointer;
-  transform: rotateY(-20deg) rotateX(10deg); /* biais 3D */
   transform-style: preserve-3d;
-  perspective: 1000px; /* effet 3D */
 }
 
 .porte::before {
