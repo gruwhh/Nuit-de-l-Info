@@ -91,3 +91,11 @@ nav a:hover {
     width: 100%;
   }
 }
+
+.zone span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.zone:hover span {
+  opacity: 1;
+}
