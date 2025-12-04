@@ -130,54 +130,32 @@ display: block;             /* affiché au survol */
 opacity: 1;
 }
 
+/* Porte fixe */
 .porte-industrielle {
   width: 180px;
   height: 300px;
-  background: #ccc; /* couleur métal */
-  border: 8px solid #666; /* cadre métallique */
   position: relative;
-  transform: rotateY(-15deg);
   transform-style: preserve-3d;
-  transition: transform 1s ease;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
   cursor: pointer;
+  perspective: 1000px;
 }
 
-/* effet ouverture */
-.porte-industrielle:hover {
-  transform: rotateY(-100deg);
-}
-
-/* joint d’étanchéité */
+/* Panneau mobile */
 .porte-industrielle::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -8px;
-  width: calc(100% + 16px);
+  left: 0;
+  width: 100%;
   height: 100%;
-  border: 2px solid #000;
-  box-sizing: border-box;
+  background: linear-gradient(to bottom, #ccc, #aaa); /* métal */
+  border: 8px solid #666; /* cadre métallique */
+  box-shadow: inset 0 0 10px #333;
+  transform-origin: left center;
+  transition: transform 1s ease;
 }
 
-/* panneau bas */
-.panneau {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 140px;
-  height: 40px;
-  background: #999;
-  border: 2px solid #444;
-}
-
-/* poignée */
-.poignee {
-  position: absolute;
-  right: 10px;
-  top: 130px;
-  width: 20px;
-  height: 40px;
-  background: #333;
-  border-radius: 5px;
+/* Ouverture au survol */
+.porte-industrielle:hover::before {
+  transform: rotateY(-100deg);
 }
