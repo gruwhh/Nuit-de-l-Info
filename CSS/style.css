@@ -136,7 +136,7 @@ opacity: 1;
   height: 300px;
   background: linear-gradient(to bottom, #ccc, #aaa); /* métal */
   border: 8px solid #666;
-  position: absolute;
+  position: relative;
   right: 50px; /* collée à droite du mur */
   top: 50px;
   cursor: pointer;
@@ -155,6 +155,7 @@ opacity: 1;
   box-shadow: inset 0 0 10px #333;
   transform-origin: left center; /* pivot sur la gauche */
   transition: transform 1s ease;
+  transform: rotateY(-85deg);
 }
 
 /* ouverture au survol */
