@@ -130,16 +130,6 @@ display: block;             /* affiché au survol */
 opacity: 1;
 }
 
-/* Mur */
-.mur {
-  width: 500px;
-  height: 400px;
-  background: #444; /* mur gris */
-  position: relative;
-  transform: rotateY(-85deg); /* mur incliné vers la droite */
-  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
-}
-
 /* Porte */
 .porte {
   width: 180px;
@@ -169,5 +159,5 @@ opacity: 1;
 
 /* ouverture au survol */
 .porte:hover::before {
-  transform: rotateY(-180deg); /* ouverture vers l’extérieur */
+  transform: rotateY(-180deg) rotateX(10deg);; /* ouverture vers l’extérieur */
 }
