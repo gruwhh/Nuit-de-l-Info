@@ -1,0 +1,98 @@
+*{box-sizing:border-box}
+:root{--bg:hsl(220,34%,5%)}
+/* additional theme variables used by custom styles */
+:root{--primary:#9d00ff;--secondary:#00ffd1;--carousel-radius:60vw}
+body{background:var(--bg);min-height:100vh;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+img{object-fit:cover}
+
+/* gallery layout */
+.gallery{position:relative;width:100vw;height:100vh;overflow:visible}
+.gallery__content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;padding:0;list-style:none}
+.gallery__card{position:absolute;width:14rem;height:18rem;overflow:visible}
+.gallery__spacer{height:3000px}
+.card__card{width:100%;height:100%;position:relative;z-index:20}
+.card__content{position:relative;height:100%;width:100%;border-radius:8px;overflow:hidden}
+.card__image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1)}
+.card__reflection{
+	position:absolute;
+	left:0;
+	/* place the reflection just below the card */
+	top: calc(100% + 8px);
+	width:100%;
+	/* show about 50% of the card height as reflection */
+	height:60%;
+	overflow:visible;
+	border-radius:8px;
+	opacity:0.9;
+	pointer-events:none;
+	z-index:5; /* below the main card */
+	/* temporary debug visuals to ensure reflection area exists */
+	outline: 2px dashed rgba(255,255,255,0.08);
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+}
+.card__reflection .card__content{
+	/* flip vertically to create mirror */
+	transform: scaleY(-1) translateY(0);
+	transform-origin: top center;
+}
+/* fade out the reflection from top to bottom (subtle) */
+.card__reflection::before{
+	content:"";
+	position:absolute;
+	inset:0;
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%);
+	pointer-events:none;
+}
+.card__reflection .card__image{filter:none;transform:scale(1)}
+
+/* if reflection still hidden, force it visible for debugging */
+.card__reflection{display:block!important;visibility:visible!important}
+.card__details{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;padding-top:12rem}
+.card__title{color:white;font-weight:800;font-size:1.125rem;text-align:center;padding:0 0 3rem}
+
+.gallery__actions{position:absolute;inset:auto 1rem 1rem 1rem;pointer-events:none}
+.gallery__prev,.gallery__next{pointer-events:auto;position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.06);border:0;color:white;width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.gallery__prev{left:1rem}
+.gallery__next{right:1rem}
+
+/* stylus converted rules */
+.card:hover{--y:-2%}
+.card .card__card{transition:0.1s ease;transform:translate3d(0,var(--y,0),0)}
+.card__overlay--reflection{background:linear-gradient(var(--bg) 50%, transparent);clip-path:inset(50% 0 0 0)}
+.card__reflection{filter:blur(5px);transition:0.2s ease;transform:translate3d(0,0,0) rotate(180deg) translate(0,-100%) rotateY(180deg) translate(0,var(--y,0))}
+.card__reflection .card__details{background:transparent}
+.card__reflection .card__content{clip-path:inset(50% 0 0 0)}
+
+/* small responsive tweak */
+@media (min-width:800px){.gallery__card{width:18rem;height:22rem}}
+/* small visual improvements */
+.gallery__card{box-shadow:0 10px 30px rgba(0,0,0,0.45);border-radius:8px;overflow:hidden}
+.card__content{background:#111}
+.gallery__actions{z-index:50}
+
+/* Custom title and carousel styles provided by user */
+title {
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+	background: linear-gradient(90deg, var(--primary), var(--secondary));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-shadow: 0 0 15px rgba(157, 0, 255, 0.5);
+	animation: pulse 3s infinite alternate;
+}
+
+/* Carousel container */
+.carousel {
+	position: relative;
+	width: var(--carousel-radius);
+	height: var(--carousel-radius);
+	transform-style: preserve-3d;
+	transition: transform 0.5s ease;
+}
+
+/* Exemple d’animation pulse */
+@keyframes pulse {
+	from { opacity: 0.7; }
+	to { opacity: 1; }
+}

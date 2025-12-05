@@ -8,5 +8,5 @@ function hideSidebar() {
 }
 
 function ouvrirIndex2() {
-    window.location.href = "index2.html"; // redirection au clic
+    window.location.href = "../Page_web/laserGame.html"; // redirection au clic
 }
