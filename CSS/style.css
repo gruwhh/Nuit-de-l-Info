@@ -141,6 +141,7 @@ opacity: 1;
   top: 50px;
   cursor: pointer;
   transform-style: preserve-3d;
+  transform: rotateY(-85deg);
 }
 
 /* panneau mobile */
@@ -155,10 +156,9 @@ opacity: 1;
   box-shadow: inset 0 0 10px #333;
   transform-origin: left center; /* pivot sur la gauche */
   transition: transform 1s ease;
-  transform: rotateY(-85deg);
 }
 
 /* ouverture au survol */
 .porte:hover::before {
-  transform: rotateY(-180deg) rotateX(10deg);; /* ouverture vers l’extérieur */
+  transform: rotateY(-90deg); /* ouverture vers l’extérieur */
 }
